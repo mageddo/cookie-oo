@@ -6,9 +6,15 @@ Recomendo fortemente que veja a pasta "test" ela resume tudo o que este faz e po
 =======
 
 0.0.3
+
     método "ler" foi renomeado para "read"
+
     método "salvar" foi renomeado para "save"
+
     método delete agora apaga um índice setado ao invés do cookie
+
     para deletar o cookie use deleteCookie
+
     Obs: tudo isso foi alterado sem precupações porque essa modificação foi feita antes da biblioteca ser distribuida
+
     
