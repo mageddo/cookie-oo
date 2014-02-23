@@ -3,7 +3,7 @@
  * Url: https://github.com/mageddo/CookieOO/
  * Desenvolvedor: Elvis de Freitas http://mageddo.com - contato@mageddo.com ( por favor mandar seus agradecimentos e reclamações)
  * Descrição: Gerencia cookies de forma abstrata e genérica facilitando a implementação
- * Versão: 0.0.2
+ * Versão: 0.0.3
  * Dependencias:
  *  Base64 - http://www.webtoolkit.info/javascript-base64.html
  *  _$over - https://github.com/myfingersarebroken/simpleOverload
