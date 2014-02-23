@@ -1,0 +1,83 @@
+<!doctype HTML>
+<html>
+    <head>
+        <meta charset="UTF-8" >
+        <script type="text/javascript" src="../dpd/overload.js"></script>
+        <script type="text/javascript" src="../dpd/base64.js"></script>
+        <script type="text/javascript" src="../src/cookie.js"></script>
+    </head>
+    <body>
+        
+        <h1>Criando facilmente um sistema de contatos com o Cookie.js</h1>
+        <p> 
+            Ok, já vimos no exemplo <a href='01-uso-basico.html'>uso básico</a> que é muito fácil armazenar Strings
+            nos nossos cookies, como também é facil lê-los mas e se quiséssemos guardar algo mais orientado?
+            Bom a resposta é que isso também é muito fácil, vamos dar uma olhada
+        </p>
+        <pre>
+        <code>
+
+        // Ex 01 - criando um cookie e colocando dados de forma orientada
+        
+        function showContacts(){
+            for(var k in contacts.read()){
+                var contact = contacts.read()[k];
+                var p = document.createElement("p");
+                p.innerHTML = contact.name+" Number: "+contact.number;
+                document.getElementById('contacts').appendChild(p);
+            }
+        }
+        
+        // adiciona alguns elementos a lista
+        var contacts = Cookie("contatos");
+        if(!contacts.isEmpty()){
+            contacts.add({name:"Jolie", number:00124});
+            contacts.add({name:"Robert", number:45643});
+        }
+        showContacts();
+        
+        
+
+        </code>
+        </pre>
+        <p><p>
+        <!-- Interface dos contatos  -->
+        <h2>Contatos:</h2>
+        <div id='contacts'></div>
+        
+        <p>
+            Você pode fazer muito mais do que foi citado aqui, apenas com as ferramentas dessa biblioteca
+            conseguiria facilmente adicionar, alterar e deletar contatos também!! :) mas como 
+            este é apenas um simples exemplo não me estendi tanto.
+        </p>    
+        <p>    
+              Repare também que o cookie "contatos" nunca existiu mas no momento em que eu disse para
+              adicionar elementos ele já verificou que o cookie não existia mas logo se prontificou
+              de cria-lo e salvar os dados de forma automática.
+        </p>    
+    </body>
+    <script>
+
+            // Ex 01 - criando um cookie e colocando dados de forma orientada
+        
+        function showContacts(){
+            for(var k in contacts.read()){
+                var contact = contacts.read()[k];
+                var p = document.createElement("p");
+                p.innerHTML = contact.name+" Number: "+contact.number;
+                document.getElementById('contacts').appendChild(p);
+            }
+        }
+        
+        // adiciona alguns elementos a lista
+        var contacts = Cookie("contatos");
+        if(!contacts.isEmpty()){
+            contacts.add({name:"Jolie", number:00124});
+            contacts.add({name:"Robert", number:45643});
+        }
+        showContacts();
+        
+        
+        
+    </script>
+</html>

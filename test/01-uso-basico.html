@@ -1,0 +1,55 @@
+<!doctype HTML>
+<html>
+    <head>
+        <meta charset="UTF-8" >
+        <script type="text/javascript" src="../dpd/overload.js"></script>
+        <script type="text/javascript" src="../dpd/base64.js"></script>
+        <script type="text/javascript" src="../src/cookie.js"></script>
+        <script type="text/javascript">
+            var cookieName = "UserName";
+            
+            
+            /**
+             * Função que escreve  nome assim que o cookie obtiver algum valor
+             */
+            function writeName(){
+                var myCookie = Cookie(cookieName);
+                var p = document.createElement("h2");
+                console.log(myCookie.read());
+                p.innerHTML  ="Hello " + myCookie.read().toString() + " !!!";
+                document.body.appendChild(p);
+            }
+            
+
+            // verificando existência do cookie caso não exista pergunta ao usuário seu nome
+            window.onload = function(){
+                var loginBtn =  document.getElementById("fazer-login");
+                
+                loginBtn.onclick = function(){
+                    
+                    var cookie = Cookie(cookieName);
+                    if(!cookie.isEmpty()){
+                        var name = prompt("What your name?");
+                        cookie.set(name);
+                        writeName();
+
+                    }else{
+                        writeName();
+                    }
+                }
+            }
+
+        </script>
+    </head>
+    <body>
+        <h2>Usando conteúdos simples</h2>
+        <p>
+            Você pode gravar conteúdo simples como strings facilmente com  a biblioteca Cookie.js
+            <br/><br/>
+            Veja um exemplo simplificado, que tal gravar um nome de um usuário e após isso sempre dar um olá para nosso querido internauta enquanto ele não fechar o navegador?
+        </p>
+        
+        <h2>Tente isso!!</h2>
+        <button id='fazer-login'>Fazer login</button>
+    </body>
+</html>
